@@ -7,7 +7,10 @@ import article from "@/view/admin/article/index.vue"
 import mark from "@/view/admin/mark/index.vue"
 import setting from "@/view/admin/setting/index.vue"
 import statistic from "@/view/admin/statistic/index.vue"
-import tag from "@/view/admin/tag/index.vue";;
+import tag from "@/view/admin/tag/index.vue"
+
+import error404 from "@/view/error/404.vue"
+
 
 
 
@@ -53,6 +56,15 @@ export default new Router({
       path: "/blog",
       name: "blog",
       component: blog
+    },
+    {
+      path: "/error404",
+      name: "error404",
+      component: error404
+    }    ,
+    {
+      path: "*",
+      redirect: "/error404"
     }
   ]
 })

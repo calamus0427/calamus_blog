@@ -32,8 +32,16 @@
   export default {
     data() {
       return {
-        activeIndex: '1',
+        // activeIndex: 'article',
       };
+    },
+    computed:{
+      activeIndex:function(){
+        var str = window.location.href;
+        var index = str .lastIndexOf("\/");
+        str  = str .substring(index + 1, str .length);
+        return str ;
+      }
     },
     methods: {
       handleSelect(key, keyPath) {
