@@ -58,7 +58,7 @@
           console.log(result);
           if(result){
             if(_this.loginForm.Identity){
-              _this.$router.push('/admin');
+              _this.$router.push('/article');
             }else{
               _this.$router.push('/blog');
             }
