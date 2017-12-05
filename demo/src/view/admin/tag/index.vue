@@ -4,6 +4,21 @@
             <el-form-item label="标签" prop="tag">
                 <el-input v-model="searchForm.tag" placeholder="请输入标签" size="small"></el-input>
             </el-form-item>
+            <el-form-item label="状态" prop="publishStatus">
+              <el-select size="small" v-model="searchForm.publishStatus" clearable placeholder="请选择">
+                <el-option
+                  key="1"
+                  label="正常"
+                  value="1">
+                </el-option>
+                <el-option
+                  key="0"
+                  label="锁定"
+                  value="0">
+                </el-option>
+              </el-select>
+            </el-form-item>
+
             <el-form-item label="创建时间" prop="createDate">
                 <el-input v-model="searchForm.createDate" placeholder="请输入创建时间" size="small"></el-input>
             </el-form-item>
@@ -28,7 +43,8 @@
           <el-col :span="5" v-for="(item,index) in tagTable" :key=item.id :offset="index % 4 > 0 ? 1 : 0">
             <el-card :body-style="{ padding: '0px'  }">
               <div style="padding: 14px;">
-                <span>{{item.name}}</span>
+                <span style="text-decoration:line-through" v-if="item.publishStatus === 0">{{item.name}}</span>
+                <span v-else>{{item.name}}</span>
                 <div class="bottom clearfix">
                   <time class="time">{{ item.createTime }}</time>
                   <el-button type="text" class="button">
@@ -77,6 +93,7 @@
           tag:'',
           createDate:'',
           publishDate:'',
+          publishStatus:''
         },
         tagTable:[{
           id:1,
@@ -84,7 +101,7 @@
           createTime:'2017-12-5',
           updateTime:'2017-12-5',
           description:'描述',
-          publishStatus:1,
+          publishStatus:0,
         },{
           id:2,
           name:'tag2',
@@ -95,6 +112,20 @@
         },{
           id:3,
           name:'tag3',
+          createTime:'2017-12-5',
+          updateTime:'2017-12-5',
+          description:'描述',
+          publishStatus:1,
+        },{
+          id:4,
+          name:'tag4',
+          createTime:'2017-12-5',
+          updateTime:'2017-12-5',
+          description:'描述',
+          publishStatus:1,
+        },{
+          id:5,
+          name:'tag5',
           createTime:'2017-12-5',
           updateTime:'2017-12-5',
           description:'描述',

@@ -2,7 +2,7 @@
 <div>
     <el-tabs tab-position="left">
       <el-tab-pane label="列表">
-                <el-form ref="searchForm" :inline="true" class="demo-form-inline"  :model="searchForm" >
+          <el-form ref="searchForm" :inline="true" class="demo-form-inline"  :model="searchForm" >
             <el-form-item label="标题" prop="title">
                 <el-input v-model="searchForm.title" placeholder="请输入标题" size="small"></el-input>
             </el-form-item>
@@ -25,7 +25,7 @@
 
         <!--应用按钮-->
         <el-button-group>
-            <el-button type="primary" size="small" >新增
+            <el-button type="primary" size="small" @click="addFormVisible = true ">新增
             </el-button>
             <el-button type="warning" size="small" @click="refresh()">
             刷新
@@ -153,6 +153,13 @@
               layout="total, sizes, prev, pager, next, jumper"
               :total="400">
             </el-pagination>
+
+        <el-dialog
+        title="收货地址"
+        :fullscreen="true"
+        :visible.sync="addFormVisible">
+          www
+        </el-dialog>
       </el-tab-pane>
       <el-tab-pane label="回收站">
                 <el-table
@@ -275,6 +282,7 @@
   export default {
     data() {
       return {
+        addFormVisible:false,
         tableData3: [{
           date: '2016-05-03',
           name: '王小虎',
