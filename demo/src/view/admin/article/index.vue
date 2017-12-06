@@ -61,7 +61,7 @@
               :filters="[{ text: '发布', value: 1 }, { text: '草稿', value: 0 }]"
               :filter-method="filterPublish"
               filter-placement="bottom-end">
-              <template scope="scope">
+              <template slot-scope="scope">
                   <el-tag type="success" v-if="scope.row.publishStatus == 1">发布</el-tag>
                   <el-tag type="info" v-if="scope.row.publishStatus == 0">草稿</el-tag>
               </template>
@@ -73,7 +73,7 @@
               :filters="[{ text: '是', value: 1 }, { text: '否', value: 0 }]"
               :filter-method="filterTop"
               filter-placement="bottom-end">
-              <template scope="scope">
+              <template slot-scope="scope">
                   <el-tag type="danger" v-if="scope.row.topStatus == 1">是</el-tag>
                   <el-tag type="info" v-if="scope.row.topStatus == 0">否</el-tag>
               </template>
@@ -129,7 +129,7 @@
                 label="操作"
                 width="300"
                 fixed="right">
-                <template scope="scope">
+                <template slot-scope="scope">
                           <el-button-group >
                               <el-button size="small" type="success">
                                   <a class="el-icon-circle-check" style="color: white;"></a> 启用
@@ -187,7 +187,7 @@
               prop="publishStatus"
               label="发布状态"
               width="120">
-              <template scope="scope">
+              <template slot-scope="scope">
                   <el-tag type="success" v-if="scope.row.publishStatus == 1">发布</el-tag>
                   <el-tag type="info" v-if="scope.row.publishStatus == 0">草稿</el-tag>
               </template>
@@ -196,7 +196,7 @@
               prop="name"
               label="置顶状态"
               width="120">
-              <template scope="scope">
+              <template slot-scope="scope">
                   <el-tag type="danger" v-if="scope.row.topStatus == 1">是</el-tag>
                   <el-tag type="info" v-if="scope.row.topStatus == 0">否</el-tag>
               </template>
@@ -247,7 +247,7 @@
                 label="操作"
                 width="300"
                 fixed="right">
-                <template scope="scope">
+                <template slot-scope="scope">
                           <el-button-group >
                               <el-button size="small" type="success">
                                   <a class="el-icon-circle-check" style="color: white;"></a> 启用

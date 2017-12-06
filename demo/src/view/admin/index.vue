@@ -19,10 +19,13 @@
     </header>
 
 
+
     <div class="main">
       <router-view/>
     </div>
     <!-- <el-footer>Calamus</el-footer> -->
+
+
   </div>
 </template>
 
@@ -33,6 +36,7 @@
     data() {
       return {
         // activeIndex: 'article',
+        dialogVisible: false,
       };
     },
     computed:{
@@ -66,11 +70,7 @@ header{
     line-height: 60px;
   }
 .main{
-  position:fixed;
-  top:80px;
-  height:610px;
-  overflow:auto;
-  width:100%;
+  margin-top:80px;
 }
 </style>
 
